@@ -1,6 +1,10 @@
 from docker.io/ros:humble
-# ArduPilot Gazebo
+
+# Zenoh
 env RMW_IMPLEMENTATION=rmw_zenoh_cpp
+run apt-get update && apt-get install -y ros-${ROS_DISTRO}-rmw-zenoh-cpp
+
+# ArduPilot Gazebo
 run apt-get update && apt-get install -y curl lsb-release gnupg
 run curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
 run echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
