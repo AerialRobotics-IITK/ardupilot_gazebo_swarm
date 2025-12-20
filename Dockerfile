@@ -12,12 +12,7 @@ run apt-get update && apt-get install -y gz-harmonic
 run apt-get update && apt-get install -y libgz-sim8-dev rapidjson-dev
 run apt-get update && apt-get install -y libopencv-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl
 
-run apt-get update && apt-get install -y \
-  libgl1 libegl1 libglx0 mesa-utils \
-  libxkbcommon0 libxkbcommon-x11-0 \
-  libqt5widgets5 libqt5gui5 libqt5core5a qtwayland5 \
-  fontconfig fonts-dejavu
-
+run apt-get install -y ros-humble-ros-gzharmonic-bridge
 ARG USER_NAME=gazebo
 ARG USER_UID=1000
 ARG USER_GID=1000
